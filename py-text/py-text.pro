@@ -6,4 +6,5 @@ CONFIG += c++11
 SOURCES +=
 
 DISTFILES += \
-    py-text.py
+    py-text.py \
+    cipf.py
