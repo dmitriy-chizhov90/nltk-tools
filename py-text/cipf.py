@@ -7,7 +7,8 @@ from nltk import WordPunctTokenizer
 from collections import Counter
 import matplotlib.pyplot as plt
 
-f = request.urlopen("http://az.lib.ru/t/tolstoj_lew_nikolaewich/text_0040.shtml")
+#f = request.urlopen("http://az.lib.ru/t/tolstoj_lew_nikolaewich/text_0040.shtml")
+f = request.urlopen("http://az.lib.ru/g/gomer/text_0030.shtml")
 data = f.read().decode("cp1251")
 f.close()
 

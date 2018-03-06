@@ -5,7 +5,8 @@ from ispras import texterra
 from nltk import WordPunctTokenizer
 from nltk import SnowballStemmer
 
-def lemmatizationWordsTexterra(t, aText):
+def lemmatizationWordsTexterra(aText):
+    t = texterra.API('2eca112748d13582aef0751b7ce9d317b04bc1e2', 'texterra', 'v1')
     result = t.lemmatizationAnnotate(aText)
     return [(a['value']) for a in result['annotations']['lemma']]
 
@@ -14,7 +15,6 @@ def stemmWordsNltk(aText):
     return [(SnowballStemmer("russian").stem(w)) for w in result]
 
 print('Running...')
-t = texterra.API('2eca112748d13582aef0751b7ce9d317b04bc1e2', 'texterra', 'v1')
 
 raw = """ Так говорила в июле 1805 года известная Анна Павловна Шерер, фрейлина и
     приближенная  императрицы  Марии  Феодоровны,  встречая важного и  чиновного
@@ -27,7 +27,7 @@ raw = """ Так говорила в июле 1805 года известная �
     pas  trop,  je serai charmée de vous  voir chez moi  entre 7 et  10  heures.
     Annette Scherer"."""
 
-print(lemmatizationWordsTexterra(t, raw))
+print(lemmatizationWordsTexterra(raw))
 print()
 print(stemmWordsNltk(raw));
 

@@ -7,4 +7,5 @@ SOURCES +=
 
 DISTFILES += \
     py-text.py \
-    cipf.py
+    cipf.py \
+    bs-test.py
